@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <ref name="root"/>
+    </start>
+    <define name="root">
+        <element name="DOC">
+            <attribute name="type"/>
+            <attribute name="nom"/>
+            <zeroOrMore>
+                <ref name="INFORef"/>
+            </zeroOrMore>
+            <oneOrMore>
+                <ref name="CONTENURef"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="INFORef">
+        <element name="INFO">
+            <element name="TITRE">
+                <text/>
+            </element>
+            <element name="AUTEUR">
+                <text/>
+            </element>
+            <element name="FORMATION">
+                <text/>
+            </element>
+        </element>
+    </define>
+    <define name="CONTENURef">
+        <element name="CONTENU">
+            <oneOrMore>
+                <ref name="ARTRef"/>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="ARTRef">
+        <element name="ART">
+            <attribute name="nom"/>
+            <attribute name="titre"/>
+            <interleave>
+                <oneOrMore>
+                    <ref name="TEXTERef"/>
+                </oneOrMore>
+                <zeroOrMore>
+                    <element name="LIEN">
+                        <attribute name="url"/>
+                        <text/>
+                    </element>
+                </zeroOrMore>
+            </interleave>
+        </element>
+    </define>
+    <define name="TEXTERef">
+        <element name="TEXTE">
+            <text/>
+        </element>
+    </define>
+</grammar>

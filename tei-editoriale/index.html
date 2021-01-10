@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
+   
+   
+   <div xmlns="" class="row">
+      <div class="col-md-12">
+         <div id="header">
+            <h1>Documents Structurés</h1>
+            <h4>Master 2 TAL</h4>
+            <h4>Lara DUNUAN</h4>
+         </div>
+      </div>
+   </div>
+   
+   
+   <div xmlns="" id="contenu">
+      
+      <div class="row">
+         <div class="col-md-12">
+            <div>
+               <h3>Bienvenue!</h3>
+               
+               <p>Ce site a été réalisé dans le cadre du cours «Documents Structurés» du M2.</p>
+               <a href="http://tal.univ-paris3.fr/plurital/index.html">«PluriTAL»</a>
+               
+               <p>L’objectif de ce projet est de réaliser une chaîne de traitement pour la publication
+                  de documents en ligne.
+               </p>
+               
+               <p>À partir des documents fournis, nous avons crée ce site web pour présenter le contenu
+                  de ces documents et interagir avec.
+               </p>
+               
+            </div>
+         </div>
+      </div>
+      
+      
+      <div class="row">
+         <div class="col-md-12">
+            <div>
+               <h3>Organisation du site</h3>
+               
+               <p>Deux grandes étapes ont été mises en œuvre.</p>
+               
+               <p>Partie 1.</p>
+               
+               <p>La première étape consiste à transformer les documents au format OpenDocument en document
+                  XML selon le standard de la Text Encoding Initiative :
+               </p>
+               <a href="https://tei-c.org/">«TEI»</a>
+               
+               <p>Les trois documents traités sont «Madame-Bovary.odt», «SIDDHARTHA.odt» et «Wuthering-Heights.odt».</p>
+               
+               <p>En effet, le format .odt est une archive contenant les différentes instructions pour
+                  interprétation par l'éditeur.
+               </p>
+               
+               <p>Après avoir dézippé les archives de plusieurs fichiers XML, nous les avons explorées
+                  pour extraire le contenu du document et ses métadonnées.
+               </p>
+               
+               <p>Nous avons employé XSLT pour réaliser cette extraction. Puis, un schéma RelaxNG nous
+                  a permis de valider la structure.
+               </p>
+               
+               <p>Partie 2.</p>
+               
+               <p>Une fois la première étape terminée, les documents sont stockés dans une base de données
+                  XML :
+               </p>
+               <a href="http://exist-db.org/exist/apps/homepage/index.html">«eXist-db»</a>
+               
+               <p>À partir de celle-ci, nous avons réalisé un site internet à l’aide de xquery et xslt.</p>         
+               
+            </div>
+         </div>
+      </div>
+      
+      
+      <div class="row">
+         <div class="col-md-12">
+            <div>
+               <h3>Navigation</h3>
+               
+               <p>Sur ce site nous présentons trois interfaces :</p>
+               
+               <p>une page d'accueil pour la présentation du projet,</p>
+               
+               <p>une page pour la recherche d’informations dans les documents :</p>
+               <a href="http://localhost:8080/exist/apps/tei-editoriale/recherche.html">«Recherche»</a>
+               
+               <p>et une autre pour afficher les documents mis en page :</p>
+               <a href="http://localhost:8080/exist/apps/tei-editoriale/visualisation.html">«Visualisation»</a>
+               
+            </div>
+         </div>
+      </div>
+      
+      
+      <div class="row">
+         <div class="col-md-12">
+            <div>
+               <h3>Les difficultés rencontrées</h3>
+               
+               <p>Partie 1 : Au stade de l'extraction, comme nous ne connaissons pas très bien la structure
+                  TEI, il a fallu plus de temps que prévu pour terminer la tâche.
+               </p>
+               
+               <p>Une fois que nous avons pu extraire les informations nécessaires, nous n'avons pas
+                  pu les valider immédiatement en raison du fichier RelaxNG incorrect.
+               </p>
+               
+               <p>Cela a été immédiatement résolu dès que le fichier RelaxNG a été corrigé.</p>
+               
+               <p>Partie 2 : Lorsque de la création de la page de présentation, nous voulions insérer
+                  des liens dans les textes comme nous le faisons en HTML.
+               </p>
+               
+               <p>Cependant, la grammaire RelaxNG nous permet pas de mettre un element &lt;LIEN&gt; au milieu
+                  des &lt;text/&gt; dans le fichier XML.
+               </p>
+               
+               <p>C'est pour cette raison que les liens sont placés sur une ligne séparée et non intégrés
+                  dans les phrases.
+               </p>
+               
+               <p>Concernant eXist-db, c'est une toute nouvelle plateforme pour nous. Parfois, la manipulation
+                  était déroutante et nous devions rechercher des solutions en ligne.
+               </p>
+               
+               <p>L'écriture de xQuery pour les fonctions de recherche était également difficile.</p>
+               
+               <p>Comme nous n'avions pas beaucoup de temps, nous avons décidé de faire une simple visualisation
+                  des documents sans utiliser de CSS.
+               </p>
+               
+            </div>
+         </div>
+      </div>
+      
+   </div>
+   
+</div>

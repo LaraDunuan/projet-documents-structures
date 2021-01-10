@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="accueil.xsl"?><?xml-model href="accueil.rng" type="application/xml" 
+            schematypens="http://relaxng.org/ns/structure/1.0"?>
+<DOC type="page" nom="Accueil">
+    
+    <INFO>
+        <TITRE>Documents Structurés</TITRE>
+        <AUTEUR>Lara DUNUAN</AUTEUR>
+        <FORMATION>Master 2 TAL</FORMATION>
+    </INFO>
+    
+    <CONTENU>
+        <ART nom="welcome" titre="Bienvenue!">
+            <TEXTE>Ce site a été réalisé dans le cadre du cours «Documents Structurés» du M2.</TEXTE>
+            <LIEN url="http://tal.univ-paris3.fr/plurital/index.html">«PluriTAL»</LIEN>
+            <TEXTE>L’objectif de ce projet est de réaliser une chaîne de traitement pour la publication de documents en ligne.</TEXTE>
+            <TEXTE>À partir des documents fournis, nous avons crée ce site web pour présenter le contenu de ces documents et interagir avec.</TEXTE>
+        </ART>
+        
+        <ART nom="site" titre="Organisation du site">
+            <TEXTE>Deux grandes étapes ont été mises en œuvre.</TEXTE>
+            <TEXTE>Partie 1.</TEXTE>
+            <TEXTE>La première étape consiste à transformer les documents au format OpenDocument en document XML selon le standard de la Text Encoding Initiative :</TEXTE>
+            <LIEN url="https://tei-c.org/">«TEI»</LIEN>
+            <TEXTE>Les trois documents traités sont «Madame-Bovary.odt», «SIDDHARTHA.odt» et «Wuthering-Heights.odt».</TEXTE>
+            <TEXTE>En effet, le format .odt est une archive contenant les différentes instructions pour interprétation par l'éditeur.</TEXTE>
+            <TEXTE>Après avoir dézippé les archives de plusieurs fichiers XML, nous les avons explorées pour extraire le contenu du document et ses métadonnées.</TEXTE>
+            <TEXTE>Nous avons employé XSLT pour réaliser cette extraction. Puis, un schéma RelaxNG nous a permis de valider la structure.</TEXTE>
+            <TEXTE>Partie 2.</TEXTE>
+            <TEXTE>Une fois la première étape terminée, les documents sont stockés dans une base de données XML :</TEXTE>
+            <LIEN url="http://exist-db.org/exist/apps/homepage/index.html">«eXist-db»</LIEN>
+            <TEXTE>À partir de celle-ci, nous avons réalisé un site internet à l’aide de xquery et xslt.</TEXTE>         
+        </ART>
+        
+        <ART nom="navi" titre="Navigation">
+            <TEXTE>Sur ce site nous présentons trois interfaces :</TEXTE>
+            <TEXTE>une page d'accueil pour la présentation du projet,</TEXTE>
+            <TEXTE>une page pour la recherche d’informations dans les documents :</TEXTE>
+            <LIEN url="http://localhost:8080/exist/apps/tei-editoriale/recherche.html">«Recherche»</LIEN>
+            <TEXTE>et une autre pour afficher les documents mis en page :</TEXTE>
+            <LIEN url="http://localhost:8080/exist/apps/tei-editoriale/visualisation.html">«Visualisation»</LIEN>
+        </ART>
+        
+        <ART nom="diff" titre="Les difficultés rencontrées">
+            <TEXTE>Partie 1 : Au stade de l'extraction, comme nous ne connaissons pas très bien la structure TEI, il a fallu plus de temps que prévu pour terminer la tâche.</TEXTE>
+            <TEXTE>Une fois que nous avons pu extraire les informations nécessaires, nous n'avons pas pu les valider immédiatement en raison du fichier RelaxNG incorrect.</TEXTE>
+            <TEXTE>Cela a été immédiatement résolu dès que le fichier RelaxNG a été corrigé.</TEXTE>
+            <TEXTE>Partie 2 : Lorsque de la création de la page de présentation, nous voulions insérer des liens dans les textes comme nous le faisons en HTML.</TEXTE>
+            <TEXTE>Cependant, la grammaire RelaxNG nous permet pas de mettre un element &lt;LIEN&gt; au milieu des &lt;text/&gt; dans le fichier XML.</TEXTE>
+            <TEXTE>C'est pour cette raison que les liens sont placés sur une ligne séparée et non intégrés dans les phrases.</TEXTE>
+            <TEXTE>Concernant eXist-db, c'est une toute nouvelle plateforme pour nous. Parfois, la manipulation était déroutante et nous devions rechercher des solutions en ligne.</TEXTE>
+            <TEXTE>L'écriture de xQuery pour les fonctions de recherche était également difficile.</TEXTE>
+            <TEXTE>Comme nous n'avions pas beaucoup de temps, nous avons décidé de faire une simple visualisation des documents sans utiliser de CSS.</TEXTE>
+        </ART>
+    </CONTENU>
+</DOC>

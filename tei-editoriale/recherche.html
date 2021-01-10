@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
+    
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Trouver les documents ayant pour titre</h3>
+            <form action="">
+            <label for="titre">Entrer un mot pour trouver les titres </label>
+            <input name="titre"/>
+            <br/>
+            <input type="radio" id="case-sensitive" name="case" value="sensitive" checked="checked"/>
+            <label for="case">Sensible à la casse</label>
+            <input type="radio" id="case-insensitive" name="case" value="insensitive"/>
+            <label for="case">Insensible à la casse</label>
+            </form>
+            <div class="search:get_title"/>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Trouver le nom du document</h3>
+            <p>ex: Siddhartha</p>
+            <form action="">
+                <label for="document">Entrer un titre pour trouver le nom du fichier :</label>
+                <input name="document"/>
+            </form>
+            <div class="search:find_doc"/>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Recherche les titres et auteurs dans la base de données</h3>
+            <form method="get" class="form-inline" id="pageform">
+                    <div class="form-group">
+                        <p>Chercher dans une balise.</p>
+                        <label for="metaName">Sélection d'une balise :</label>
+                        <select name="metaName" id="metaName">
+                            <option value="title">Titres</option>
+                            <option value="author">Auteurs</option>
+                        </select>
+                        <br/>
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                    <div class="search:find_meta"/>
+            </form>
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-md-12">
+        <h3>Concordancier</h3>
+            <div>
+                <p>Exemples des requêtes: "Bovary", "Govinda", "Joseph"</p>
+                <p>Entrer un mot pour afficher les livres le contenant.</p>
+                <form method="get" class="form-inline" id="pageform">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="searchexpr"/>
+                        </div>
+                        <br/>
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </form>
+            </div>
+            <hr/>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Score</th>
+                        <th>KWIC</th>
+                        <th>Document</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-template="search:concordance"/>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Recherche plein texte</h3>
+            <p>Effectuer une recherche plein texte dans un livre, ou tout les livres.</p>
+            <form method="get" class="form-inline" id="pageform">
+                    <div class="form-group">
+                        <p>Entrer un nom d'auteur.</p>
+                        <label for="authorName">Sélection d'un auteur :</label>
+                        <select name="authorName" id="authorName">
+                            <option value="Emily Brontë">Emily Brontë</option>
+                            <option value="Gustave Flaubert">Gustave Flaubert</option>
+                            <option value="Hermann Hesse">Hermann Hesse</option>
+                            <option value="tous">Tous</option>
+                        </select>
+                        
+                        <br/>
+                        <p>Entrer un mot pour afficher les livres le contenant.</p>
+                        <p>Exemples des requêtes: "Bovary", "Govinda", "Joseph", "Om"</p>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="searchExpr"/>
+                        </div>
+                        <br/>
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Auteur</th>
+                        <th>Score</th>
+                        <th>KWIC</th>
+                        <th>Document</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-template="search:byauthor"/>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
