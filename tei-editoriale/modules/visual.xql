@@ -16,7 +16,7 @@ declare function visual:toc($node as node(), $model as map(*)) {
 };
 
 (: Transformer un fichier XML en fichier HTML avec XSLT :)
-declare function visual:XMLtoHTML ($node as node(), $model as map (*), $query as xs:string?) {
+declare function visual:XMLtoHTML ($node as node(), $model as map (*)) {
 let $ref := xs:string(request:get-parameter("document", ()))
 let $xml := doc(concat("/db/apps/tei-editoriale/data/",$ref))
 let $xsl := doc(concat($config:app-root, "/resources/visual.xsl"))
