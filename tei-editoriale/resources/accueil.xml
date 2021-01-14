@@ -1,56 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="accueil.xsl"?><?xml-model href="accueil.rng" type="application/xml" 
             schematypens="http://relaxng.org/ns/structure/1.0"?>
-<DOC type="page" nom="Accueil">
+<doc type="page" nom="Accueil">
     
-    <INFO>
-        <TITRE>Documents Structurés</TITRE>
-        <AUTEUR>Lara DUNUAN</AUTEUR>
-        <FORMATION>Master 2 TAL</FORMATION>
-    </INFO>
+    <info>
+        <titre>documents Structurés</titre>
+        <auteur>Lara DUNUAN</auteur>
+        <formation>Master 2 TAL</formation>
+    </info>
     
-    <CONTENU>
-        <ART nom="welcome" titre="Bienvenue!">
-            <TEXTE>Ce site a été réalisé dans le cadre du cours «Documents Structurés» du M2.</TEXTE>
-            <LIEN url="http://tal.univ-paris3.fr/plurital/index.html">«PluriTAL»</LIEN>
-            <TEXTE>L’objectif de ce projet est de réaliser une chaîne de traitement pour la publication de documents en ligne.</TEXTE>
-            <TEXTE>À partir des documents fournis, nous avons crée ce site web pour présenter le contenu de ces documents et interagir avec.</TEXTE>
-        </ART>
+    <contenu>
+        <art nom="welcome" titre="Bienvenue!">
+            <texte>Ce site a été réalisé dans le cadre du cours «documents Structurés» du M2.</texte>
+            <lien url="http://tal.univ-paris3.fr/plurital/index.html">«PluriTAL»</lien>
+            <texte>L’objectif de ce projet est de réaliser une chaîne de traitement pour la publication de documents en ligne.
+            À partir des documents fournis, nous avons crée ce site web pour présenter le contenu de ces documents et interagir avec.</texte>
+        </art>
         
-        <ART nom="site" titre="Organisation du site">
-            <TEXTE>Deux grandes étapes ont été mises en œuvre.</TEXTE>
-            <TEXTE>Partie 1.</TEXTE>
-            <TEXTE>La première étape consiste à transformer les documents au format OpenDocument en document XML selon le standard de la Text Encoding Initiative :</TEXTE>
-            <LIEN url="https://tei-c.org/">«TEI»</LIEN>
-            <TEXTE>Les trois documents traités sont «Madame-Bovary.odt», «SIDDHARTHA.odt» et «Wuthering-Heights.odt».</TEXTE>
-            <TEXTE>En effet, le format .odt est une archive contenant les différentes instructions pour interprétation par l'éditeur.</TEXTE>
-            <TEXTE>Après avoir dézippé les archives de plusieurs fichiers XML, nous les avons explorées pour extraire le contenu du document et ses métadonnées.</TEXTE>
-            <TEXTE>Nous avons employé XSLT pour réaliser cette extraction. Puis, un schéma RelaxNG nous a permis de valider la structure.</TEXTE>
-            <TEXTE>Partie 2.</TEXTE>
-            <TEXTE>Une fois la première étape terminée, les documents sont stockés dans une base de données XML :</TEXTE>
-            <LIEN url="http://exist-db.org/exist/apps/homepage/index.html">«eXist-db»</LIEN>
-            <TEXTE>À partir de celle-ci, nous avons réalisé un site internet à l’aide de xquery et xslt.</TEXTE>         
-        </ART>
+        <art nom="site" titre="Organisation du site">
+            <texte>Deux grandes étapes ont été mises en œuvre.</texte>
+            <texte>Partie 1.</texte>
+            <texte>La première étape consiste à transformer les documents au format Opendocument en document XML selon le standard de la Text Encoding Initiative :</texte>
+            <lien url="https://tei-c.org/">«TEI»</lien>
+            <texte>Les trois documents traités sont «Madame-Bovary.odt», «SIDDHartHA.odt» et «Wuthering-Heights.odt».
+            En effet, le format .odt est une archive contenant les différentes instructions pour interprétation par l'éditeur.
+            Après avoir dézippé les archives de plusieurs fichiers XML, nous les avons explorées pour extraire le contenu du document et ses métadonnées.
+            Nous avons employé XSLT pour réaliser cette extraction. Puis, un schéma RelaxNG nous a permis de valider la structure.</texte>
+            <texte>Partie 2.</texte>
+            <texte>Une fois la première étape terminée, les documents sont stockés dans une base de données XML :</texte>
+            <lien url="http://exist-db.org/exist/apps/homepage/index.html">«eXist-db»</lien>
+            <texte>À partir de celle-ci, nous avons réalisé un site internet à l’aide de xquery et xslt.</texte>         
+        </art>
         
-        <ART nom="navi" titre="Navigation">
-            <TEXTE>Sur ce site nous présentons trois interfaces :</TEXTE>
-            <TEXTE>une page d'accueil pour la présentation du projet,</TEXTE>
-            <TEXTE>une page pour la recherche d’informations dans les documents :</TEXTE>
-            <LIEN url="http://localhost:8080/exist/apps/tei-editoriale/recherche.html">«Recherche»</LIEN>
-            <TEXTE>et une autre pour afficher les documents mis en page :</TEXTE>
-            <LIEN url="http://localhost:8080/exist/apps/tei-editoriale/visualisation.html">«Visualisation»</LIEN>
-        </ART>
+        <art nom="navi" titre="Navigation">
+            <texte>Sur ce site nous présentons trois interfaces :</texte>
+            <texte>une page d'accueil pour la présentation du projet,</texte>
+            <texte>une page pour la recherche d’informations dans les documents :</texte>
+            <lien url="http://localhost:8080/exist/apps/tei-editoriale/recherche.html">«Recherche»</lien>
+            <texte>et une autre pour afficher les documents mis en page :</texte>
+            <lien url="http://localhost:8080/exist/apps/tei-editoriale/visualisation.html">«Visualisation»</lien>
+        </art>
         
-        <ART nom="diff" titre="Les difficultés rencontrées">
-            <TEXTE>Partie 1 : Au stade de l'extraction, comme nous ne connaissons pas très bien la structure TEI, il a fallu plus de temps que prévu pour terminer la tâche.</TEXTE>
-            <TEXTE>Une fois que nous avons pu extraire les informations nécessaires, nous n'avons pas pu les valider immédiatement en raison du fichier RelaxNG incorrect.</TEXTE>
-            <TEXTE>Cela a été immédiatement résolu dès que le fichier RelaxNG a été corrigé.</TEXTE>
-            <TEXTE>Partie 2 : Lorsque de la création de la page de présentation, nous voulions insérer des liens dans les textes comme nous le faisons en HTML.</TEXTE>
-            <TEXTE>Cependant, la grammaire RelaxNG nous permet pas de mettre un element &lt;LIEN&gt; au milieu des &lt;text/&gt; dans le fichier XML.</TEXTE>
-            <TEXTE>C'est pour cette raison que les liens sont placés sur une ligne séparée et non intégrés dans les phrases.</TEXTE>
-            <TEXTE>Concernant eXist-db, c'est une toute nouvelle plateforme pour nous. Parfois, la manipulation était déroutante et nous devions rechercher des solutions en ligne.</TEXTE>
-            <TEXTE>L'écriture de xQuery pour les fonctions de recherche était également difficile.</TEXTE>
-            <TEXTE>Comme nous n'avions pas beaucoup de temps, nous avons décidé de faire une simple visualisation des documents sans utiliser de CSS.</TEXTE>
-        </ART>
-    </CONTENU>
-</DOC>
+        <art nom="diff" titre="Les difficultés rencontrées">
+            <texte>Partie 1 : Au stade de l'extraction, comme nous ne connaissons pas très bien la structure TEI, il a fallu plus de temps que prévu pour terminer la tâche.
+            Une fois que nous avons pu extraire les informations nécessaires, nous n'avons pas pu les valider immédiatement en raison du fichier RelaxNG incorrect.
+            Cela a été immédiatement résolu dès que le fichier RelaxNG a été corrigé.</texte>
+            
+            <texte>Partie 2 : Lorsque de la création de la page de présentation, nous voulions insérer des liens dans les textes (hyperlink) comme nous le faisons en HTML.
+            Cependant, la grammaire RelaxNG nous permet pas de mettre un element &lt;lien&gt; au milieu des &lt;text/&gt; dans le fichier XML.
+            C'est pour cette raison que les liens sont placés sur une ligne séparée et non intégrés dans les phrases.</texte>
+            
+            <texte>Concernant eXist-db, c'est une toute nouvelle plateforme pour nous. Parfois, la manipulation était déroutante et nous devions rechercher des solutions en ligne.
+            Cependant, même si cette partie du projet était un défi, j'ai pris plaisir à découvrir les fonctionnalités de la plateforme.</texte>
+            
+            <texte>L'écriture de xQuery pour les fonctions de recherche était également difficile.
+            Nous avons dû rechercher en ligne des tutos sur la façon d'écrire XQuery pour la recherche plein texte, l'indexation et le concordancier. 
+            Même si cela a également été compliqué pour nous, il était satisfaisant de voir les résultats de nos recherches. 
+            Nous devons admettre cependant que nous pouvons améliorer davantage nos requêtes XQuery. Mais cette expérience est un point de départ. 
+            De plus, avec plus de documents et de balises XML-TEI, nous pourrions probablement écrire des recherches XQuery plus intéressantes.</texte>
+            
+            <texte>Enfin, ous avons décidé de faire une simple visualisation des documents sans utiliser de CSS.</texte>
+        </art>
+    </contenu>
+</doc>

@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
    
    
    <div xmlns="" class="row">
       <div class="col-md-12">
          <div id="header">
-            <h1>Documents Structurés</h1>
+            <h1>documents Structurés</h1>
             <h4>Master 2 TAL</h4>
             <h4>Lara DUNUAN</h4>
          </div>
@@ -20,14 +19,12 @@
             <div>
                <h3>Bienvenue!</h3>
                
-               <p>Ce site a été réalisé dans le cadre du cours «Documents Structurés» du M2.</p>
+               <p>Ce site a été réalisé dans le cadre du cours «documents Structurés» du M2.</p>
                <a href="http://tal.univ-paris3.fr/plurital/index.html">«PluriTAL»</a>
                
                <p>L’objectif de ce projet est de réaliser une chaîne de traitement pour la publication
                   de documents en ligne.
-               </p>
-               
-               <p>À partir des documents fournis, nous avons crée ce site web pour présenter le contenu
+                  À partir des documents fournis, nous avons crée ce site web pour présenter le contenu
                   de ces documents et interagir avec.
                </p>
                
@@ -45,22 +42,17 @@
                
                <p>Partie 1.</p>
                
-               <p>La première étape consiste à transformer les documents au format OpenDocument en document
+               <p>La première étape consiste à transformer les documents au format Opendocument en document
                   XML selon le standard de la Text Encoding Initiative :
                </p>
                <a href="https://tei-c.org/">«TEI»</a>
                
-               <p>Les trois documents traités sont «Madame-Bovary.odt», «SIDDHARTHA.odt» et «Wuthering-Heights.odt».</p>
-               
-               <p>En effet, le format .odt est une archive contenant les différentes instructions pour
+               <p>Les trois documents traités sont «Madame-Bovary.odt», «SIDDHartHA.odt» et «Wuthering-Heights.odt».
+                  En effet, le format .odt est une archive contenant les différentes instructions pour
                   interprétation par l'éditeur.
-               </p>
-               
-               <p>Après avoir dézippé les archives de plusieurs fichiers XML, nous les avons explorées
+                  Après avoir dézippé les archives de plusieurs fichiers XML, nous les avons explorées
                   pour extraire le contenu du document et ses métadonnées.
-               </p>
-               
-               <p>Nous avons employé XSLT pour réaliser cette extraction. Puis, un schéma RelaxNG nous
+                  Nous avons employé XSLT pour réaliser cette extraction. Puis, un schéma RelaxNG nous
                   a permis de valider la structure.
                </p>
                
@@ -105,34 +97,42 @@
                
                <p>Partie 1 : Au stade de l'extraction, comme nous ne connaissons pas très bien la structure
                   TEI, il a fallu plus de temps que prévu pour terminer la tâche.
-               </p>
-               
-               <p>Une fois que nous avons pu extraire les informations nécessaires, nous n'avons pas
+                  Une fois que nous avons pu extraire les informations nécessaires, nous n'avons pas
                   pu les valider immédiatement en raison du fichier RelaxNG incorrect.
+                  Cela a été immédiatement résolu dès que le fichier RelaxNG a été corrigé.
                </p>
                
-               <p>Cela a été immédiatement résolu dès que le fichier RelaxNG a été corrigé.</p>
                
                <p>Partie 2 : Lorsque de la création de la page de présentation, nous voulions insérer
-                  des liens dans les textes comme nous le faisons en HTML.
-               </p>
-               
-               <p>Cependant, la grammaire RelaxNG nous permet pas de mettre un element &lt;LIEN&gt; au milieu
+                  des liens dans les textes (hyperlink) comme nous le faisons en HTML.
+                  Cependant, la grammaire RelaxNG nous permet pas de mettre un element &lt;lien&gt; au milieu
                   des &lt;text/&gt; dans le fichier XML.
-               </p>
-               
-               <p>C'est pour cette raison que les liens sont placés sur une ligne séparée et non intégrés
+                  C'est pour cette raison que les liens sont placés sur une ligne séparée et non intégrés
                   dans les phrases.
                </p>
                
+               
                <p>Concernant eXist-db, c'est une toute nouvelle plateforme pour nous. Parfois, la manipulation
                   était déroutante et nous devions rechercher des solutions en ligne.
+                  Cependant, même si cette partie du projet était un défi, j'ai pris plaisir à découvrir
+                  les fonctionnalités de la plateforme.
                </p>
                
-               <p>L'écriture de xQuery pour les fonctions de recherche était également difficile.</p>
                
-               <p>Comme nous n'avions pas beaucoup de temps, nous avons décidé de faire une simple visualisation
-                  des documents sans utiliser de CSS.
+               <p>L'écriture de xQuery pour les fonctions de recherche était également difficile.
+                  Nous avons dû rechercher en ligne des tutos sur la façon d'écrire XQuery pour la recherche
+                  plein texte, l'indexation et le concordancier. 
+                  Même si cela a également été compliqué pour nous, il était satisfaisant de voir les
+                  résultats de nos recherches. 
+                  Nous devons admettre cependant que nous pouvons améliorer davantage nos requêtes XQuery.
+                  Mais cette expérience est un point de départ. 
+                  De plus, avec plus de documents et de balises XML-TEI, nous pourrions probablement
+                  écrire des recherches XQuery plus intéressantes.
+               </p>
+               
+               
+               <p>Enfin, ous avons décidé de faire une simple visualisation des documents sans utiliser
+                  de CSS.
                </p>
                
             </div>

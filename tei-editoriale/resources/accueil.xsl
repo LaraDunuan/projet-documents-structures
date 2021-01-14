@@ -3,7 +3,7 @@
     
     <xsl:output method="html" version="4.0" encoding="UTF-8" indent="yes"/>
     
-    <xsl:template match="DOC">
+    <xsl:template match="doc">
         <xsl:result-document href="index.html" method="html">
         <div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
             <xsl:apply-templates/>
@@ -11,31 +11,31 @@
         </xsl:result-document>
     </xsl:template>
     
-    <xsl:template match="INFO">
+    <xsl:template match="info">
         <div class="row">
             <div class="col-md-12">
                 <div id="header">
                     <h1>
-                        <xsl:value-of select="//INFO/TITRE"/>
+                        <xsl:value-of select="//info/titre"/>
                     </h1>
                     <h4>
-                        <xsl:value-of select="//INFO/FORMATION"/>
+                        <xsl:value-of select="//info/formation"/>
                     </h4>
                     <h4>
-                        <xsl:value-of select="//INFO/AUTEUR"/>
+                        <xsl:value-of select="//info/auteur"/>
                     </h4>
                 </div>
             </div>
         </div>
     </xsl:template>
     
-    <xsl:template match="CONTENU">
+    <xsl:template match="contenu">
         <div id="contenu">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
     
-    <xsl:template match="ART">
+    <xsl:template match="art">
         <div class="row">
             <div class="col-md-12">
                 <div>
@@ -65,13 +65,13 @@
         </div>
     </xsl:template>
     
-    <xsl:template match="TEXTE">
+    <xsl:template match="texte">
         <p>
             <xsl:apply-templates/>
         </p>
     </xsl:template>
     
-    <xsl:template match="LIEN">
+    <xsl:template match="lien">
         <a href="{./@url}">
             <xsl:value-of select="."/>
         </a>

@@ -4,7 +4,7 @@
         <ref name="root"/>
     </start>
     <define name="root">
-        <element name="DOC">
+        <element name="doc">
             <attribute name="type"/>
             <attribute name="nom"/>
             <zeroOrMore>
@@ -16,27 +16,27 @@
         </element>
     </define>
     <define name="INFORef">
-        <element name="INFO">
-            <element name="TITRE">
+        <element name="info">
+            <element name="titre">
                 <text/>
             </element>
-            <element name="AUTEUR">
+            <element name="auteur">
                 <text/>
             </element>
-            <element name="FORMATION">
+            <element name="formation">
                 <text/>
             </element>
         </element>
     </define>
     <define name="CONTENURef">
-        <element name="CONTENU">
+        <element name="contenu">
             <oneOrMore>
                 <ref name="ARTRef"/>
             </oneOrMore>
         </element>
     </define>
     <define name="ARTRef">
-        <element name="ART">
+        <element name="art">
             <attribute name="nom"/>
             <attribute name="titre"/>
             <interleave>
@@ -44,7 +44,7 @@
                     <ref name="TEXTERef"/>
                 </oneOrMore>
                 <zeroOrMore>
-                    <element name="LIEN">
+                    <element name="lien">
                         <attribute name="url"/>
                         <text/>
                     </element>
@@ -53,7 +53,7 @@
         </element>
     </define>
     <define name="TEXTERef">
-        <element name="TEXTE">
+        <element name="texte">
             <text/>
         </element>
     </define>
